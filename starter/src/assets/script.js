@@ -1,5 +1,5 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-var products = ["cherry", "orange", "strawberry"];
+const products = [];
 
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
@@ -9,14 +9,58 @@ var products = ["cherry", "orange", "strawberry"];
    - productId: unique id for the product (number)
    - image: picture of product (url string)
 */
-
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
    - orange.jpg by Mae Mu
    - strawberry.jpg by Allec Gomes
 */
+const products1 = {
+  name: "Cherry",
+  price: 1,
+  quantity: 0,
+  productId: 101,
+  image: "./images/cherry.jpg",
+};
+products.push(products1);
+
+const products2 = {
+  name: "Orange",
+  price: 3,
+  quantity: 0,
+  productId: 301,
+  image: "./images/orange.jpg",
+};
+products.push(products2);
+
+const products3 = {
+  name: "Strawberry",
+  price: 2,
+  quantity: 0,
+  productId: 201,
+  image: "./images/strawberry.jpg",
+};
+products.push(products3);
+
+const products4 = {
+  name: "Helmet",
+  price: 10,
+  quantity: 0,
+  productId: 110,
+  image: "./images/helmet.jpg",
+};
+products.push(products4);
+
+const products5 = {
+  name: "Shoes",
+  price: 20,
+  quantity: 0,
+  productId: 220,
+  image: "../images/shoes.jpg",
+};
+products.push(products5);
 
 /* Declare an empty array named cart to hold the items in the cart */
+const cart = [];
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
@@ -28,6 +72,7 @@ var products = ["cherry", "orange", "strawberry"];
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
+
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -63,15 +108,15 @@ var products = ["cherry", "orange", "strawberry"];
 */
 
 module.exports = {
-   products,
-   cart,
-   addProductToCart,
-   increaseQuantity,
-   decreaseQuantity,
-   removeProductFromCart,
-   cartTotal,
-   pay, 
-   emptyCart,
-   /* Uncomment the following line if completing the currency converter bonus */
-   // currency
+  products,
+  cart,
+  addProductToCart,
+  increaseQuantity,
+  decreaseQuantity,
+  removeProductFromCart,
+  cartTotal,
+  pay,
+  emptyCart,
+  /* Uncomment the following line if completing the currency converter bonus */
+  // currency
 }
