@@ -60,38 +60,32 @@ const products5 = {
   image: "./images/shoes.jpg",
 };
 products.push(products5);
-
-// define what items to find globally?
-// does this go here? written like this below?
-// const productList = document.getElementById(".products");
-
 /* Declare an empty array named cart to hold the items in the cart */
 const cart = [];
-
-console.log(products);
-
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
-/* function addProductToCart(productId) {
-    if(productId.classList.contains("add-to-cart-button"));
+
+function addProductToCart(productId) {
+   products.forEach ((product) => {
+    if (product.productId === productId) {
+      product.quantity = product.quantity += 1;
+      cart.push(product); // add products to cart
+     } 
+    let search = cart.find((product) => product.productId === product.productId);
+
+    if(search === product) { 
+     product.productId; // sees if item is in cart already
+  }
+  else {
+    productId.quantity +=1; // if not, add to cart
+  }
+});
+  console.log(cart);
 }
-/* addProductToCart(productId)  // argument = productId
 
-  // const found ==>  indexOf find search?
-  // find item, need to loop/iterate through list
-  // if/else/return statements?
-  // add item when it matches
-  // increase item quantity
-  // connect to div class "products" or "products-container" on html?
-  // connect to "add-to-cart" class button on js front?
-  // event listener on  click?
-  // return to stop loop cycle when eveything matches
-
-
-console.log(productId)(products.name); // adds product to cart div container? Return statement?
 
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
@@ -137,7 +131,7 @@ console.log(productId)(products.name); // adds product to cart div container? Re
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
-//function cartTotal []
+function cartTotal() { }
 // iterate through cart to get total of all products
 // math code to return sum of items/products in cart
 // connected to somewhere else in the file folders?
@@ -172,12 +166,15 @@ module.exports = {
   products,
   cart,
   addProductToCart,
-  increaseQuantity,
-  decreaseQuantity,
-  removeProductFromCart,
   cartTotal,
-  pay,
-  emptyCart,
+  /*increaseQuantity,
+    decreaseQuantity,
+    removeProductFromCart,
+    
+    pay,
+    emptyCart,
+    */
+
   /* Uncomment the following line if completing the currency converter bonus */
   // currency
 }
