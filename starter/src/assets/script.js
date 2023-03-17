@@ -77,13 +77,19 @@ function addProductToCart(productId) {
     });
   return addProductToCart;
 }
-addProductToCart(productID);
 
+function increaseQuantity(productId) {
+  products.forEach((product) => {
+    if (product.productId === productId) {
+    product["quantity"]= product.quantity + 1;
+    }
+  });
+  }
+increaseQuantity(productId);
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
-//function increaseQuantity(productId) {}
 // find matching productId
 // increase product quantity
 // connected to "qup" class button on js front?
