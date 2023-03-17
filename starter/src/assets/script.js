@@ -69,60 +69,59 @@ const cart = [];
 */
 
 function addProductToCart(productId) {
-   products.forEach ((product) => {
-    if (product.productId === productId) {
-      product.quantity += 1;
-      cart.push(product); // add products to cart
-     } 
-    });
-  return addProductToCart;
+  products.forEach ((product) => {
+   if(product.productId === productId) {
+     product.quantity += 1;
+     cart.push(product); // add products to cart
+    } 
+   });
+ return addProductToCart;
 }
-
-function increaseQuantity(productId) {
-  products.forEach((product) => {
-    if (product.productId === productId) {
-    product["quantity"]= product.quantity + 1;
-    }
-  });
-  }
-increaseQuantity(productId);
+addProductToCart(productId);
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
-// find matching productId
-// increase product quantity
-// connected to "qup" class button on js front?
-// splice?
 
+function increaseQuantity(productId) {
+  products.forEach((product) => {
+    if(product.productId === productId) {
+    product["quantity"]= product.quantity += 1;
+    }
+  });
+  return increaseQuantity;
+  }
+increaseQuantity(productId);
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
   - decreaseQuantity should decrease the quantity of the product
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
-//function decreaseQuantity(productId) {}
-// find matching productId
-// subtract product quantity
-// connected to "qdown" class buttonon js front?
-// remove item completely from cart when reaches zero
-// splice?
-// return last statement end code?
-
+function decreaseQuantity(productId) {
+  products.forEach((product) => {
+    if(product.productId === productId) {
+      product["quantity"] = product.quantity - 1;
+    }
+  });
+  return decreaseQuantity;
+  }
+  decreaseQuantity(productId);
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
   - removeProductFromCart should remove the product from the cart
 */
-//function removeProductFromCart(productId) {}
-// find matching productId
-// reset quantity to zero
-// remove item completely from cart when reaches zero
-// connected to "remove" class button in js front?
-// splice?
-// return last statement end code?
-
+function removeProductFromCart(productId) {
+  products.forEach((product) => {
+    if(product.productId === productId) {
+      cart.splice(product, 1);
+    }
+  });
+  return removeProductFromCart;
+  }
+  removeProductFromCart(productId);
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
