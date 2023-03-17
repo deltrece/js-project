@@ -71,22 +71,13 @@ const cart = [];
 function addProductToCart(productId) {
    products.forEach ((product) => {
     if (product.productId === productId) {
-      product.quantity = product.quantity += 1;
+      product.quantity += 1;
       cart.push(product); // add products to cart
      } 
-    let search = cart.find((product) => product.productId === product.productId);
-
-    if(search === product) { 
-     product.productId; // sees if item is in cart already
-  }
-  else {
-    productId.quantity +=1; // if not, add to cart
-  }
-});
-  console.log(cart);
+    });
+  return addProductToCart;
 }
-
-
+addProductToCart(productID);
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
