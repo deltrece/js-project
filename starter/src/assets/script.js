@@ -103,6 +103,9 @@ function decreaseQuantity(productId) {
     if(product.productId === productId) {
       product["quantity"] = product.quantity - 1;
     }
+    if (product.productId <= 0) {
+      cart.pop(productId);
+    }
   });
   return decreaseQuantity;
   }
@@ -127,7 +130,8 @@ function removeProductFromCart(productId) {
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
-function cartTotal() { }
+function cartTotal() { 
+}
 // iterate through cart to get total of all products
 // math code to return sum of items/products in cart
 // connected to somewhere else in the file folders?
@@ -162,12 +166,11 @@ module.exports = {
   products,
   cart,
   addProductToCart,
+  increaseQuantity,
+  decreaseQuantity,
+  removeProductFromCart,
   cartTotal,
-  /*increaseQuantity,
-    decreaseQuantity,
-    removeProductFromCart,
-    
-    pay,
+    /*pay,
     emptyCart,
     */
 
