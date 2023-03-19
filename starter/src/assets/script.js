@@ -121,24 +121,46 @@ let subtractItem = getProduct(productId, cart);
   - removeProductFromCart should remove the product from the cart
 */
 /*function removeProductFromCart(productId) {
-let removeItem = getProduct(productId, cart);
-  if(removeItem.quantity === 0) {
-  cart.splice(productId, 1);
+let removeItem =  getProduct(productId, products);
+  if (removeItem.productId && product.quantity === 0) {
+    cart.splice(productId, 1);
   }
+console.log(removeItem);
 }*/
 
 /*function removeProductFromCart(productId) {
-let removeItem = getProduct(productId, cart);
-    removeItem.quantity(cart.splice(product, 1));
+  let idx = cart.findIndex(x => x.productId === product.productId);
 }*/
 
-function removeProductFromCart(productId) {
+/*function removeProductFromCart(productId) {
+  let removeItem = cart.findIndex(getProduct => getProduct.productId === product.productId);
+  if (removeItem.quantity === 0);
+  removeItem.findIndex;
+  cart.splice(productId, 1);
+
+  console.log(removeProductFromCart);
+}*/
+
+/*function removeProductFromCart(productId) {
+let product = cart.findIndex(product => product.productId === product.productId);
   products.forEach((product) => {
     if(product.productId === productId) {
       cart.splice(product, 1);
     }
   });
+console.log(product);
 }
+*/
+
+/*function removeProductFromCart(productId) {
+let product = cart.findIndex(product => product.productId === product.productId);
+  products.forEach((product) => {
+    if(product.productId === productId) {
+      cart.splice(product, 1);
+    }
+  });
+console.log(product);
+*/
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products(quantity is needed to find)
