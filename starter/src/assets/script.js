@@ -8,13 +8,16 @@
    - image: picture of product (url string)
 */
 /* Images provided in /images folder. All images from Unsplash.com
-
    - cherry.jpg by Mae Mu
    - orange.jpg by Mae Mu
    - strawberry.jpg by Allec Gomes
 */
 
 const products = [];
+
+function getProduct(productId, productList) {
+  return productList.find((item) => item.productId === productId);
+}
 
 const products1 = {
   name: "Cherry",
@@ -69,6 +72,16 @@ const cart = [];
 */
 
 function addProductToCart(productId) {
+let itemOne = getProduct(productId, cart);
+let itemTwo = getProduct(productId, products);
+if (productId === itemTwo.productId && itemOne === itemTwo) {
+  itemOne.quantity++;
+} else if (productId === itemTwo.productId) {
+  itemTwo.quantity++;
+  cart.push(itemTwo);
+}
+}
+/*function addProductToCart(productId) {
   products.forEach ((product) => {
    if(product.productId === productId) {
      product.quantity += 1;
@@ -76,22 +89,17 @@ function addProductToCart(productId) {
     } 
    });
  return addProductToCart;
-}
-addProductToCart(productId);
+*/
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
 
 function increaseQuantity(productId) {
-  products.forEach((product) => {
-    if(product.productId === productId) {
-    product["quantity"]= product.quantity += 1;
-    }
-  });
-  return increaseQuantity;
-  }
-increaseQuantity(productId);
+let addedItem = getProduct(productId, cart);
+  addedItem.quantity++;
+}
+
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -99,58 +107,65 @@ increaseQuantity(productId);
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 function decreaseQuantity(productId) {
-  products.forEach((product) => {
-    if(product.productId === productId) {
-      product["quantity"] = product.quantity - 1;
-    }
-    if (product.productId <= 0) {
-      cart.pop(productId);
-    }
-  });
-  return decreaseQuantity;
+let subtractItem = getProduct(productId, cart);
+  if (subtractItem.quantity === 1) {
+    removeProductFromCart(productId);
+  } else {
+    subtractItem.quantity--;
   }
-  decreaseQuantity(productId);
+}
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
   - removeProductFromCart should remove the product from the cart
 */
+/*function removeProductFromCart(productId) {
+let removeItem = getProduct(productId, cart);
+  if(removeItem.quantity === 0) {
+  cart.splice(productId, 1);
+  }
+}*/
+
+/*function removeProductFromCart(productId) {
+let removeItem = getProduct(productId, cart);
+    removeItem.quantity(cart.splice(product, 1));
+}*/
+
 function removeProductFromCart(productId) {
   products.forEach((product) => {
     if(product.productId === productId) {
       cart.splice(product, 1);
     }
   });
-  return removeProductFromCart;
-  }
-  removeProductFromCart(productId);
+}
 
 /* Create a function named cartTotal that has no parameters
-  - cartTotal should iterate through the cart to get the total of all products
-  - cartTotal should return the sum of the products in the cart
+  - cartTotal should iterate through the cart to get the total of all products(quantity is needed to find)
+  - cartTotal should return the sum/price of the products in the cart
+  Price times quantity
+  declare a variable that holds a value of a number
+  use a for loop
 */
-function cartTotal() { 
-}
-// iterate through cart to get total of all products
-// math code to return sum of items/products in cart
-// connected to somewhere else in the file folders?
+function cartTotal() {}
 
 
 /* Create a function called emptyCart that empties the products from the cart */
 //function emptyCart 
 // empties all prducts from cart
-// connected to somewhere else in the file folders?
+// pop method
+// for loop method
 
 /* Create a function named pay that takes in an amount as an argument
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
 //function pay 
-// if/else statement code
+// if statement code
 // math to return negative # if amount is underpaid
 // math to return positive # if amount is overpaid
-// connected to somewhere else in the file folders?
+// render return the value
+// conditional code
 
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
@@ -170,8 +185,8 @@ module.exports = {
   decreaseQuantity,
   removeProductFromCart,
   cartTotal,
-    /*pay,
-    emptyCart,
+  /*pay,
+    /*emptyCart,
     */
 
   /* Uncomment the following line if completing the currency converter bonus */
