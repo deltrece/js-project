@@ -120,6 +120,20 @@ let subtractItem = getProduct(productId, cart);
   - removeProductFromCart should update the product quantity to 0
   - removeProductFromCart should remove the product from the cart
 */
+
+// Attempt #1/5
+function removeProductFromCart(productId) {
+  products.forEach((product) => {
+    if(product.productId === productId) {
+      //let idx = cart.findIndex(x => x.productId === product.productId);
+      //let product = cart.findIndex(product => product.productId === product.productId);
+      cart.splice(product, 1);
+    }
+  });
+console.log(removeProductFromCart);
+}
+
+// Attempt # 2/5
 /*function removeProductFromCart(productId) {
 let removeItem =  getProduct(productId, products);
   if (removeItem.productId && product.quantity === 0) {
@@ -128,19 +142,22 @@ let removeItem =  getProduct(productId, products);
 console.log(removeItem);
 }*/
 
+// Attempt #3/5
 /*function removeProductFromCart(productId) {
   let idx = cart.findIndex(x => x.productId === product.productId);
 }*/
 
+// Attempt #4/5
 /*function removeProductFromCart(productId) {
   let removeItem = cart.findIndex(getProduct => getProduct.productId === product.productId);
   if (removeItem.quantity === 0);
   removeItem.findIndex;
   cart.splice(productId, 1);
 
-  console.log(removeProductFromCart);
+  console.log(removeItem);
 }*/
 
+ // Attempt # 5/5
 /*function removeProductFromCart(productId) {
 let product = cart.findIndex(product => product.productId === product.productId);
   products.forEach((product) => {
@@ -152,15 +169,16 @@ console.log(product);
 }
 */
 
-/*function removeProductFromCart(productId) {
-let product = cart.findIndex(product => product.productId === product.productId);
+/*
+function removeProductFromCart(productId) {
+  //let product = cart.findIndex(product => product.productId === product.productId);
   products.forEach((product) => {
-    if(product.productId === productId) {
-      cart.splice(product, 1);
+    if(product.productId === productId === 0) {
+      cart.slice(productId, 1);
     }
   });
-console.log(product);
-*/
+  
+}*/
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products(quantity is needed to find)
@@ -169,6 +187,7 @@ console.log(product);
   declare a variable that holds a value of a number
   use a for loop
 */
+// Global Total Paid Variable need 
 function cartTotal() {}
 
 
