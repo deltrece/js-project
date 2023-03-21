@@ -200,12 +200,13 @@ function removeProductFromCart(productId) {
 // Global Total Paid Variable need 
 
 function cartTotal() {
-  let totalPaid = 0; //global variable eaqual to zero  
+  let totalPaid = 0; //global variable equal to zero  
   cart.find((product) => { //find the product in cart
     if (product.quantity === getProduct) { // if the product quantity is strickly equal to the get product helper function
-      totalPaid = product.quantity * product.price; //multiple the cart's product quantity with the product price
+      totalPaid = cart.quantity * cart.price; //multiple the cart's product quantity with the product price
     }
   });
+  return (totalPaid);
  // return the sum of those numbers
 //console.log("cartTotal");
 }
