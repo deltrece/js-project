@@ -134,3 +134,9 @@ Step 7: [Optional] Add extra features
 ## License
 
 [License](LICENSE.txt)
+
+## Resources
+// https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=10960s
+// Peer study sessions
+// Contributors: 
+

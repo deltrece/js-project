@@ -15,6 +15,10 @@
 
 const products = [];
 
+/**
+* ! Helper Function Created to Get Products
+**/
+
 function getProduct(productId, productList) {
   return productList.find((item) => item.productId === productId);
 }
@@ -81,6 +85,8 @@ if (productId === itemTwo.productId && itemOne === itemTwo) {
   cart.push(itemTwo);
 }
 }
+
+// Original code that repeatedly added the product cards into the cart
 /*function addProductToCart(productId) {
   products.forEach ((product) => {
    if(product.productId === productId) {
@@ -121,17 +127,22 @@ let subtractItem = getProduct(productId, cart);
   - removeProductFromCart should remove the product from the cart
 */
 
-// Attempt #1/5
+/**
+ * ! Code attempt #1/5, works but with bugs
+ **/
+
 function removeProductFromCart(productId) {
   products.forEach((product) => {
     if(product.productId === productId) {
       //let idx = cart.findIndex(x => x.productId === product.productId);
       //let product = cart.findIndex(product => product.productId === product.productId);
       cart.splice(product, 1);
+      //update product quantity to zero
     }
   });
-console.log(removeProductFromCart);
+//console.log(removeProductFromCart);
 }
+
 
 // Attempt # 2/5
 /*function removeProductFromCart(productId) {
@@ -177,7 +188,6 @@ function removeProductFromCart(productId) {
       cart.slice(productId, 1);
     }
   });
-  
 }*/
 
 /* Create a function named cartTotal that has no parameters
@@ -188,20 +198,52 @@ function removeProductFromCart(productId) {
   use a for loop
 */
 // Global Total Paid Variable need 
-function cartTotal() {}
 
+function cartTotal() {
+  let totalPaid = 0; //global variable eaqual to zero  
+  cart.find((product) => { //find the product in cart
+    if (product.quantity === getProduct) { // if the product quantity is strickly equal to the get product helper function
+      totalPaid = product.quantity * product.price; //multiple the cart's product quantity with the product price
+    }
+  });
+ // return the sum of those numbers
+//console.log("cartTotal");
+}
+
+/**
+ * ! EXTRA CREDIT BELOW
+ **/
 
 /* Create a function called emptyCart that empties the products from the cart */
 //function emptyCart 
 // empties all prducts from cart
 // pop method
 // for loop method
+/**
+ * ! EXTRA CREDIT ABOVE 
+ **/
 
 /* Create a function named pay that takes in an amount as an argument
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
-//function pay 
+//function pay(amount) {}
+
+/**
+ * ? notes for pay amount function
+ * */
+
+function pay(amount) {
+  //let cashOne mean that amount entered is equal to or greater than the cartTotal
+  //let cashTwo mean that amount entered is less than cartTotal
+  
+  //if (cashOne > = cartTotal) {}
+    //return (a positive number?);
+
+  //if (cashTwo < cartTotal) {}
+    //return (a negative number?);
+  }
+pay(amount);
 // if statement code
 // math to return negative # if amount is underpaid
 // math to return positive # if amount is overpaid
@@ -226,7 +268,7 @@ module.exports = {
   decreaseQuantity,
   removeProductFromCart,
   cartTotal,
-  /*pay,
+  pay,
     /*emptyCart,
     */
 
