@@ -165,7 +165,7 @@ let totalPaid = 0;
 //function pay(amount) {}
 
 /**
- * ? notes for pay amount function
+ * ? Pay function
  * */
 
 function pay(amount) {
