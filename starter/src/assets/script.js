@@ -127,69 +127,14 @@ let subtractItem = getProduct(productId, cart);
   - removeProductFromCart should remove the product from the cart
 */
 
-/**
- * ! Code attempt #1/5, works but with bugs
- **/
-
 function removeProductFromCart(productId) {
-  products.forEach((product) => {
-    if(product.productId === productId) {
-      //let idx = cart.findIndex(x => x.productId === product.productId);
-      //let product = cart.findIndex(product => product.productId === product.productId);
-      cart.splice(product, 1);
-      //update product quantity to zero
+  cart.forEach((product, index) => {
+      if(product.productId === productId) {
+        product.quantity = 0;
+        cart.splice(index, 1); //update product quantity to zero
     }
   });
-//console.log(removeProductFromCart);
 }
-
-
-// Attempt # 2/5
-/*function removeProductFromCart(productId) {
-let removeItem =  getProduct(productId, products);
-  if (removeItem.productId && product.quantity === 0) {
-    cart.splice(productId, 1);
-  }
-console.log(removeItem);
-}*/
-
-// Attempt #3/5
-/*function removeProductFromCart(productId) {
-  let idx = cart.findIndex(x => x.productId === product.productId);
-}*/
-
-// Attempt #4/5
-/*function removeProductFromCart(productId) {
-  let removeItem = cart.findIndex(getProduct => getProduct.productId === product.productId);
-  if (removeItem.quantity === 0);
-  removeItem.findIndex;
-  cart.splice(productId, 1);
-
-  console.log(removeItem);
-}*/
-
- // Attempt # 5/5
-/*function removeProductFromCart(productId) {
-let product = cart.findIndex(product => product.productId === product.productId);
-  products.forEach((product) => {
-    if(product.productId === productId) {
-      cart.splice(product, 1);
-    }
-  });
-console.log(product);
-}
-*/
-
-/*
-function removeProductFromCart(productId) {
-  //let product = cart.findIndex(product => product.productId === product.productId);
-  products.forEach((product) => {
-    if(product.productId === productId === 0) {
-      cart.slice(productId, 1);
-    }
-  });
-}*/
-
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products(quantity is needed to find)
   - cartTotal should return the sum/price of the products in the cart
@@ -197,20 +142,35 @@ function removeProductFromCart(productId) {
   declare a variable that holds a value of a number
   use a for loop
 */
-// Global Total Paid Variable need 
+// Global Total Paid Variable need
+let totalPaid = 0;
 
 function cartTotal() {
-  let totalPaid = 0; //global variable equal to zero  
-  cart.find((product) => { //find the product in cart
-    if (product.quantity === getProduct) { // if the product quantity is strickly equal to the get product helper function
-      totalPaid = cart.quantity * cart.price; //multiple the cart's product quantity with the product price
-    }
-  });
-  return (totalPaid);
- // return the sum of those numbers
-//console.log("cartTotal");
+   //global variable equal to zero
+    //cart.forEach((product, index) => {
+    //  if (cart.productId, productId) {
+    //  totalPaid = cart.quantity * cart.price;
+//}});
 }
 
+
+ // return the sum of those numbers
+
+ //function cartTotal() {
+  //let totalPaid = 0;
+  //return (cart.quantity * cart.price) + totalPaid;
+//}
+
+/*function cartTotal() {
+  let totalPaid = 0; 
+  let cart1 = getProduct(productId, cart);
+  let cart2 = getProduct(productId, price);
+  if (productId === cart1, cart2) {
+    totalPaid = cart1 * cart2;
+  }
+  return cartTotal;
+}
+*/
 /**
  * ! EXTRA CREDIT BELOW
  **/
@@ -235,14 +195,6 @@ function cartTotal() {
  * */
 
 function pay(amount) {
-  //let cashOne mean that amount entered is equal to or greater than the cartTotal
-  //let cashTwo mean that amount entered is less than cartTotal
-  
-  //if (cashOne > = cartTotal) {}
-    //return (a positive number?);
-
-  //if (cashTwo < cartTotal) {}
-    //return (a negative number?);
   }
 pay(amount);
 // if statement code
