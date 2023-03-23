@@ -137,6 +137,6 @@ Step 7: [Optional] Add extra features
 
 ## Resources
 // https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=10960s
-// Peer study sessions
-// Contributors: 
+// Study sessions with peers and session leads.
+// Contributors: Front End Web Development Fall 2022 - Spring 2023 Cohort
 

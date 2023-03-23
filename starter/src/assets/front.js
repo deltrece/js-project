@@ -121,7 +121,7 @@ document.querySelector('.pay').addEventListener('click', (e) => {
         div.innerHTML = `
             <p>Cash Received: ${currencySymbol}${amount}</p>
             <p>Cash Returned: ${currencySymbol}${cashReturn}</p>
-            <p>Thank you!</p>
+            <p>Thank you! Come Again!</p>
         `;
     } else {
         // reset cash field for next entry
