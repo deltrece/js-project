@@ -76,33 +76,25 @@ const cart = [];
 */
 
 function addProductToCart(productId) {
-let itemOne = getProduct(productId, cart);
-let itemTwo = getProduct(productId, products);
-if (productId === itemTwo.productId && itemOne === itemTwo) {
-  itemOne.quantity++;
-} else if (productId === itemTwo.productId) {
-  itemTwo.quantity++;
-  cart.push(itemTwo);
-}
+  let itemOne = getProduct(productId, cart);
+  let itemTwo = getProduct(productId, products);
+  if (productId === itemTwo.productId && itemOne === itemTwo) {
+    itemOne.quantity++;
+  } else if (productId === itemTwo.productId) {
+    itemTwo.quantity++;
+    cart.push(itemTwo);
+  }
 }
 
 // Original code that repeatedly added the product cards into the cart
-/*function addProductToCart(productId) {
-  products.forEach ((product) => {
-   if(product.productId === productId) {
-     product.quantity += 1;
-     cart.push(product); // add products to cart
-    } 
-   });
- return addProductToCart;
-*/
+
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
 
 function increaseQuantity(productId) {
-let addedItem = getProduct(productId, cart);
+  let addedItem = getProduct(productId, cart);
   addedItem.quantity++;
 }
 
@@ -113,7 +105,7 @@ let addedItem = getProduct(productId, cart);
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 function decreaseQuantity(productId) {
-let subtractItem = getProduct(productId, cart);
+  let subtractItem = getProduct(productId, cart);
   if (subtractItem.quantity === 1) {
     removeProductFromCart(productId);
   } else {
@@ -129,9 +121,9 @@ let subtractItem = getProduct(productId, cart);
 
 function removeProductFromCart(productId) {
   cart.forEach((product, index) => {
-      if(product.productId === productId) {
-        product.quantity = 0;
-        cart.splice(index, 1); //update product quantity to zero
+    if (product.productId === productId) {
+      product.quantity = 0; //update product quantity to zero
+      cart.splice(index, 1);
     }
   });
 }
@@ -143,38 +135,20 @@ function removeProductFromCart(productId) {
   use a for loop
 */
 // Global Total Paid Variable need
-let totalPaid = 0;
 
 function cartTotal() {
-   //global variable equal to zero
-    //cart.forEach((product, index) => {
-    //  if (cart.productId, productId) {
-    //  totalPaid = cart.quantity * cart.price;
-//}});
+  let total = 0;
+  cart.forEach((product) => {
+    total += product.quantity * product.price;
+  });
+  return (total);
 }
 
+let totalPaid = 0;
 
- // return the sum of those numbers
-
- //function cartTotal() {
-  //let totalPaid = 0;
-  //return (cart.quantity * cart.price) + totalPaid;
-//}
-
-/*function cartTotal() {
-  let totalPaid = 0; 
-  let cart1 = getProduct(productId, cart);
-  let cart2 = getProduct(productId, price);
-  if (productId === cart1, cart2) {
-    totalPaid = cart1 * cart2;
-  }
-  return cartTotal;
-}
-*/
 /**
  * ! EXTRA CREDIT BELOW
  **/
-
 /* Create a function called emptyCart that empties the products from the cart */
 //function emptyCart 
 // empties all prducts from cart
@@ -195,17 +169,18 @@ function cartTotal() {
  * */
 
 function pay(amount) {
+  totalPaid = totalPaid + amount;
+  let balance = totalPaid - cartTotal();
+
+  if (totalPaid > cartTotal) {
+    balance += totalPaid - cartTotal;
   }
-pay(amount);
-// if statement code
-// math to return negative # if amount is underpaid
-// math to return positive # if amount is overpaid
-// render return the value
-// conditional code
-
-
+  if (totalPaid < cartTotal) {
+    balance += totalPaid + cartTotal;
+  }
+  return balance;
+}
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
-
 
 /* The following is for running unit tests. 
    To fully complete this project, it is expected that all tests pass.
@@ -222,8 +197,8 @@ module.exports = {
   removeProductFromCart,
   cartTotal,
   pay,
-    /*emptyCart,
-    */
+  /*emptyCart,
+  */
 
   /* Uncomment the following line if completing the currency converter bonus */
   // currency
