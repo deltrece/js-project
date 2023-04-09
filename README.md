@@ -1,5 +1,5 @@
 # :file_folder: Project Title
-## :shopping_cart: Shoppingg Cart Funtionality
+## :shopping_cart: Shopping Cart Funtionality
 
 ## Table of Contents
 
